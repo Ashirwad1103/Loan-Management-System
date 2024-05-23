@@ -1,0 +1,10 @@
+{"execution_time": 0.019998788833618164, "request_id": 621bcae9-34d9-4571-a19c-e270125a01d6, "endpoint": http://127.0.0.1:8000/}
+{"execution_time": 0.023438453674316406, "request_id": c737a080-2289-4bd9-9896-709033b56ce5, "endpoint": http://127.0.0.1:8000/}
+{"execution_time": 0.015659332275390625, "request_id": 4d9a00ee-7cfe-4e04-adbd-45cccfcb76bd, "endpoint": {}, "method": GET }
+{"execution_time": 0.005721330642700195, "request_id": d3f21ff9-b99e-43c3-aeec-f6f1e6b4f5a6, "endpoint": /api/loan_application/applications, "method": GET }
+{"execution_time": 0.03121328353881836, "request_id": be71fdce-0d27-461e-a99f-5e8fdd186846, "endpoint": /api/loan_application/applications, "method": POST }
+{"execution_time": 0.028395414352416992, "request_id": a06e1343-1ff2-484b-b4a0-448b17ce59ca, "endpoint": /api/loan_application/applications, "method": GET }
+{"execution_time": 0.058226585388183594, "request_id": 3ddc7d6a-d487-46d5-aba9-1030c09f3782, "endpoint": /api/loan_application/applications, "method": PUT }
+{"execution_time": 0.019865036010742188, "request_id": 6a4e6262-faa9-4f4d-b154-8e1035ae994e, "endpoint": /api/loan_application/applications, "method": DELETE }
+{"execution_time": 0.001605987548828125, "request_id": 7010a2d2-dc2b-478f-b3fb-c527c3ce3a78, "endpoint": /api/loan_application/applications, "method": PUT }
+{"execution_time": 0.006654977798461914, "request_id": 857bcbb7-d23c-4e8a-8d73-3067b76280c6, "endpoint": /api/loan_application/applications, "method": GET }

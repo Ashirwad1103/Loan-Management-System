@@ -1,0 +1,62 @@
+
+{
+    "version": 1,
+    "disable_existing_loggers": true,
+    "formatters": {
+      "simple": {
+        "format": "%(levelname)s: %(message)s",
+        "datefmt": "%Y-%m-%dT%H:%M:%S%z"
+      },
+      "status_json": {
+        "()": "app.loggers.loan_application_logger.JSONFormatter",
+        "fmt_keys": {
+          "level": "levelname",
+          "message": "message",
+          "timestamp": "timestamp",
+          "logger": "name",
+          "module": "module",
+          "function": "funcName",
+          "line": "lineno",
+          "thread_name": "threadName"
+        }
+      },
+      "execution_time_json": {
+        "format": "{\"execution_time\": %(execution_time)s, \"request_id\": %(request_id)s, \"endpoint\": %(endpoint)s, \"method\": %(method)s }"      }
+    },
+    "handlers": {
+      "status_file": {
+        "class": "logging.handlers.RotatingFileHandler",
+        "level": "DEBUG",
+        "formatter": "status_json",
+        "filename": "logs/app_status.log.json1",
+        "maxBytes": 10000,
+        "backupCount": 3,
+        "mode": "a"
+      },
+      "execution_time_file": {
+        "class": "logging.handlers.RotatingFileHandler",
+        "level": "DEBUG",
+        "formatter": "execution_time_json",
+        "filename": "logs/app_execution_time.log.json1",
+        "maxBytes": 10000,
+        "backupCount": 3,
+        "mode": "a"
+      }
+    },
+    "loggers": {
+        "loan_application_logger": {
+            "level": "DEBUG",
+            "handlers": ["status_file"],
+            "propagate": false
+        },
+        "root": {
+            "level": "CRITICAL",
+            "handlers": []
+        },
+        "execution_time_logger": {
+          "level": "DEBUG",
+          "handlers": ["execution_time_file"]
+        } 
+    }
+}
+ 

@@ -1,0 +1,16 @@
+## Requirements
+
+1. Define a Loan Application class with attributes such as applicant's name, credit score, loan amount, loan purpose, income, employment status, and other relevant information.
+2. Develop a Risk Assessment module to analyze loan applications based on factors like credit score, debt-to-income ratio, employment status, loan amount, and purpose. Assign a risk score to each application.
+3. Implement a Loan Approval module that uses the risk score and predefined lending criteria to approve or reject a loan application.
+4. Design a RESTful API using Python and FastAPI to expose the loan approval functionality, supporting operations like submitting a new loan application, retrieving the status of a submitted application, and optionally updating or deleting an existing application.
+5. Implement a queue-based architecture to handle a high volume of incoming loan applications using message brokers like RabbitMQ or Apache Kafka.
+6. Add a scalable data storage solution for persisting loan applications and their statuses such as mySQL or MongoDB.
+7. Incorporate monitoring and logging mechanisms to track the performance and status of the system.
+8. Write unit and integration tests to validate the functionality and performance of the system.
+9. Provide clear documentation on the system design, architecture, and instructions on how to set up, run, and test the system.
+
+## Deliverables
+
+1. A Python project containing the Loan Application class, Risk Assessment module, Loan Approval module, RESTful API implementation, queue-based processing architecture, data storage solution, monitoring and logging mechanisms, and unit and integration tests.
+2. A README file with instructions on how to set up, run, and test the system, along with documentation on the system design and architecture.
