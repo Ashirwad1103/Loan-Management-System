@@ -1,0 +1,76 @@
+1. /api/loan_applications/applications
+
+    sample payload -
+        {
+            "name": "John",
+            "credit_score": 750, (note - range of values accepted for this field is 0-850)
+            "loan_amount": 25,
+            "loan_purpose": "Salary",
+            "income": 10,
+            "employment_status": "Unemployed", ()
+            "debt_to_income_ratio": 0.6, (note - range of values accepted for this field is 0-1)
+        }
+
+    status code - 201
+
+    sample response - 
+        {
+            "application_id": uuid
+        }
+
+2. GET /api/loan_applications/applications
+    sample payload - 
+        uuid - {use uuid received from the POST api}
+
+    status code - 200
+    sample response - 
+        {
+            "name": "Ashirwad",
+            "credit_score": 600,
+            "loan_amount": 20,
+            "loan_purpose": "Inventory",
+            "income": 10,
+            "employment_status": "Employed",
+            "debt_to_income_ratio": 0.6,
+            "uuid": "erehrgkljrhtiojaog",
+            "risk_score": 61.1242525,
+            "status": "Rejected"
+        }
+3. PUT /api/loan_applications/applications
+    sample payload -
+        {
+            "uuid": "erehrgkljrhtiojaog", (note - mandatory field)
+            "name": "Ashirwad", 
+            "credit_score": 600,
+            "loan_amount": 20,
+            "loan_purpose": "Inventory",
+            "income": 10,
+            "employment_status": "Employed",
+            "debt_to_income_ratio": 0.6
+    } 
+
+    note 1 -  Rest of the field are optional, and follow the same rules as POST request
+    note 2 - Already approved applications are not allowed to updated 
+
+    status code - 200 
+    sample response - 
+        {
+            "name": "Ashirwad",
+            "credit_score": 600,
+            "loan_amount": 20,
+            "loan_purpose": "Inventory",
+            "income": 10,
+            "employment_status": "Employed",
+            "debt_to_income_ratio": 0.6,
+            "uuid": "erehrgkljrhtiojaog",
+            "risk_score": 61.1242525,
+            "status": "Rejected"
+        }
+
+4. DELETE api/loan_application/applications
+    sample payload - 
+        uuid - {use uuid received from the POST api}
+    
+        status_code = 204
+        sample response - {} 
+        

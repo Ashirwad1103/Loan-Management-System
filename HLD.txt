@@ -1,0 +1,50 @@
+# Loan Approval System
+
+System Design - 
+1. API Layer: FastAPI-based backend to handle HTTP requests.
+2. Database Layer: SQLite for data persistence.
+3. Message Broker: RabbitMQ for handling asynchronous tasks like loan application processing.
+4. Backgroudn service: A background worker for processing loan applications.
+
+Components and Architecture
+1. FastAPI Backend
+    Endpoints:
+        a. POST /api/loan_applications/applications: Apply for a loan (sends data to RabbitMQ).
+        b. GET /api/loan_applications/applications: Get loan information.
+        c. PUT /api/loan_applications/applications: Update loan information.
+        d. DELTE /api/loan_applications/applications: Delete a loan.
+
+    Business Logic:
+    Loan application validation and queuing.
+        Loan information retrieval.
+        Loan information updates.
+        Loan deletion.
+    2. SQLite Database
+        Tables:
+        a. LoanApplications.
+            id = int, pk
+            uuid = str
+            name = str
+            credit_score = float
+            loan_amount =  float
+            loan_purpose = float
+            income =  float            
+            employment_status = str
+            debt_to_income_ratio = float
+            risk_score = float
+            status = Str
+            created_at = DateTime
+            updated_at = DateTime
+        
+For visuals please refer to - https://app.eraser.io/workspace/yquJvmxKfMqciKFSA9FB?origin=share
+
+3. RabbitMQ
+    Queues:
+    loan_applications: For handling loan application requests.
+
+
+#Scope of improvement 
+1. Use retries and dead lettering in Queue
+2. Using temporary fast data storage like to redis to store the loan applications, this will be helpfull in the cases where user is trying to retreive a loan application but their application is still pending in queue.
+2. Use queue based Architecture for Logging
+3. Using Alembic to perfrom migrations on the schema and data
